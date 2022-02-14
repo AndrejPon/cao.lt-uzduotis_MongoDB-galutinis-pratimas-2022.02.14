@@ -4,6 +4,6 @@ const router = express.Router();
 const membershipsController = require('../controllers/membershipsController');
 
 router.get('/api/memberships', membershipsController.membershipsIndex);
-
+router.post('/api/memberships', membershipsController.createMembership);
 
 module.exports = router;
