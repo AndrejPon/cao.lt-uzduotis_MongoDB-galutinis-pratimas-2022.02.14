@@ -22,5 +22,8 @@ app.get('/test', (req, res) => res.send('Back end online'));
 const membershipsRoutes = require('./routes/membershipsRoutes');
 app.use('/', membershipsRoutes);
 
+const usersRoutes = require('./routes/usersRoutes');
+app.use('/', usersRoutes);
+
 // Server
 app.listen(PORT, console.log(`Server is running on port ${PORT}`));
