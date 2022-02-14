@@ -24,7 +24,7 @@ async function createMembership(req, res) {
     failResponce(res);
     return;
   }
-  successResponce(res, 'createResult');
+  successResponce(res, createResult);
 }
 
 async function removeMembership(req, res) {

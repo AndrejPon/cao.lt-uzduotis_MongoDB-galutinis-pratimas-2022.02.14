@@ -1,4 +1,4 @@
-const { getAllUsersFromDb } = require('../models/usersModel');
+const { getAllUsersFromDb, addUser } = require('../models/usersModel');
 const {
   successResponce,
   failResponce,
@@ -13,4 +13,14 @@ async function usersIndex(req, res) {
   successResponce(res, allUsers);
 }
 
-module.exports = { usersIndex };
+async function createUser(req, res) {
+  const { body } = req;
+  const createResult = await addUser(body);
+  if (createResult === false) {
+    failResponce(res);
+    return;
+  }
+  successResponce(res, createResult);
+}
+
+module.exports = { usersIndex, createUser };

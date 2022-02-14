@@ -18,4 +18,19 @@ async function getAllUsersFromDb() {
   }
 }
 
-module.exports = { getAllUsersFromDb };
+async function addUser(newUserFromUser) {
+  try {
+    await dbClient.connect();
+    const createResult = await dbClient
+      .db('caoMongoDb')
+      .collection('users')
+      .insertOne(newUserFromUser);
+    await dbClient.close();
+    return createResult;
+  } catch (error) {
+    console.warn('error in addUser', error);
+    return false;
+  }
+}
+
+module.exports = { getAllUsersFromDb, addUser };

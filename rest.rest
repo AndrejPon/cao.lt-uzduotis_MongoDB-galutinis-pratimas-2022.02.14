@@ -22,3 +22,15 @@ DELETE http://localhost:3000/memberships/620a6dd7fa26e00accc0b3e5
 ###
 
 GET http://localhost:3000/users
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "Jack",
+    "surname": "Russel",
+    "email": "jack@gmail.com",
+    "service_id": ""
+} 
