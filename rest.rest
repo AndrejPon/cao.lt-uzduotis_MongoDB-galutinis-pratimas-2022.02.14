@@ -2,11 +2,11 @@ GET http://localhost:3000/test
 
 ###
 
-GET http://localhost:3000/api/memberships
+GET http://localhost:3000/memberships
 
 ###
 
-POST http://localhost:3000/api/memberships
+POST http://localhost:3000/memberships
 Content-Type: application/json
 
 {
@@ -14,3 +14,7 @@ Content-Type: application/json
     "price": "2.20",
     "description": "7 days membership"
 } 
+
+###
+
+DELETE http://localhost:3000/memberships/620a6dd7fa26e00accc0b3e5

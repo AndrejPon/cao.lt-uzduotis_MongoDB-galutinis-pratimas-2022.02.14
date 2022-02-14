@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 const membershipsController = require('../controllers/membershipsController');
 
-router.get('/api/memberships', membershipsController.membershipsIndex);
-router.post('/api/memberships', membershipsController.createMembership);
+router.get('/memberships', membershipsController.membershipsIndex);
+router.post('/memberships', membershipsController.createMembership);
+router.delete('/memberships/:id', membershipsController.removeMembership);
 
 module.exports = router;

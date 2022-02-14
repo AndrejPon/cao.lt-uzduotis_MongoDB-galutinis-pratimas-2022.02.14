@@ -1,6 +1,7 @@
 const {
   getAllMembershipsFromDb,
   addMembership,
+  deleteMembershipFromDb,
 } = require('../models/membershipsModels');
 const {
   successResponce,
@@ -26,4 +27,20 @@ async function createMembership(req, res) {
   successResponce(res, 'createResult');
 }
 
-module.exports = { membershipsIndex, createMembership };
+async function removeMembership(req, res) {
+  const { id } = req.params;
+  if (!id) {
+    throw new Error('Nepaduotas id išstrynimui');
+  }
+  const removeResult = await deleteMembershipFromDb(id);
+  if (removeResult === false) {
+    failResponce(res);
+    return;
+  }
+  if (removeResult.deletedCount !== 1) {
+    failResponce(res, 'Ištrynti nepavyko', 400);
+  }
+  successResponce(res, removeResult);
+}
+
+module.exports = { membershipsIndex, createMembership, removeMembership };

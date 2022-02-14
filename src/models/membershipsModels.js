@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const dbClient = require('../db');
 
 async function getAllMembershipsFromDb() {
@@ -32,4 +33,24 @@ async function addMembership(newMembershipFromUser) {
   }
 }
 
-module.exports = { getAllMembershipsFromDb, addMembership };
+async function deleteMembershipFromDb(id) {
+  try {
+    await dbClient.connect();
+    const deleteResult = await dbClient
+      .db('caoMongoDb')
+      .collection('services')
+      .deleteOne({ _id: ObjectId(id) });
+
+    await dbClient.close();
+    return deleteResult;
+  } catch (error) {
+    console.warn('deleteMembershipFromDb function error', error);
+    return false;
+  }
+}
+
+module.exports = {
+  getAllMembershipsFromDb,
+  addMembership,
+  deleteMembershipFromDb,
+};
