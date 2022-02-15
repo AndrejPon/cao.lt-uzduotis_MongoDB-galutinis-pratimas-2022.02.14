@@ -18,6 +18,23 @@ async function getAllUsersFromDb() {
   }
 }
 
+async function getOrderedUsersFromDb(order) {
+  try {
+    await dbClient.connect();
+    const dataFromDb = await dbClient
+      .db('caoMongoDb')
+      .collection('users')
+      .aggregate([{ $match: {} }, { $sort: { name: -1 } }])
+      .toArray();
+    await dbClient.close();
+
+    return dataFromDb;
+  } catch (error) {
+    console.warn('getOrderedUsersFromDb function error', error);
+    return false;
+  }
+}
+
 async function addUser(newUserFromUser) {
   try {
     await dbClient.connect();
@@ -33,4 +50,4 @@ async function addUser(newUserFromUser) {
   }
 }
 
-module.exports = { getAllUsersFromDb, addUser };
+module.exports = { getAllUsersFromDb, addUser, getOrderedUsersFromDb };

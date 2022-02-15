@@ -34,3 +34,7 @@ Content-Type: application/json
     "email": "jack@gmail.com",
     "service_id": ""
 } 
+
+###
+
+GET http://localhost:3000/users/-1
