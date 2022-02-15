@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const { MongoClient } = require('mongodb');
+const cors = require('cors');
 
 const app = express();
 
@@ -15,6 +16,7 @@ const dbClient = new MongoClient(MONGO_CONNECTION_STRING);
 app.use(morgan('dev'));
 // kad gauti duomenis json formatu
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.get('/test', (req, res) => res.send('Back end online'));

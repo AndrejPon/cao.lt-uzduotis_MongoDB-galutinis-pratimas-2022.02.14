@@ -6,14 +6,29 @@ body {
 
 .upper-section {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
 }
-#new-membership {
+#new-membership-btn {
   background-color: blue;
   color: white;
   height: 30px;
   border-radius: 5px;
   padding: 0 20px;
+  cursor: pointer;
+}
+#memberships-blocks-area {
+  display: flex;
+  justify-content: space-between;
+}
+.membership-container {
+  /* display: flex;
+  flex-direction: column; */
+  background: white;
+  width: 300px;
+  text-align: center;
+}
+.h-line hr {
+  color: rgb(245, 237, 237);
 }
