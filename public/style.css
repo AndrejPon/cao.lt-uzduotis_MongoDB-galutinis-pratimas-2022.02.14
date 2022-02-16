@@ -1,16 +1,33 @@
-body {
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+
+.main-container {
   background-color: rgb(243, 234, 234);
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
+  height: 800px;
+}
+.header {
+  background: white;
+  height: 40px;
+  text-align: center;
+  padding-top: 30px;
+}
+a {
+  text-decoration: none;
+  padding-top: 30px;
+  margin-right: 50px;
 }
 
 .upper-section {
+  /* width: 60%; */
+  padding: 0 20px 20px 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
 }
-#new-membership-btn {
+#new-membership-btn,
+#new-user-btn {
   background-color: blue;
   color: white;
   height: 30px;
@@ -18,17 +35,43 @@ body {
   padding: 0 20px;
   cursor: pointer;
 }
-#memberships-blocks-area {
+#memberships-blocks-area,
+#users-blocks-area {
   display: flex;
   justify-content: space-between;
 }
-.membership-container {
-  /* display: flex;
-  flex-direction: column; */
+#users-blocks-area {
+  flex-wrap: wrap;
+}
+.membership-container,
+.user-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
   background: white;
   width: 300px;
   text-align: center;
 }
+.user-container {
+  margin-bottom: 20px;
+  width: 350px;
+  text-align: start;
+  padding-left: 10px;
+}
+
 .h-line hr {
   color: rgb(245, 237, 237);
+}
+.trash-btn {
+  align-self: flex-end;
+  background: rgb(247, 183, 183);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
 }
