@@ -27,7 +27,8 @@ a {
   align-items: center;
 }
 #new-membership-btn,
-#new-user-btn {
+#new-user-btn,
+.new-membership-btn {
   background-color: blue;
   color: white;
   height: 30px;
@@ -70,6 +71,27 @@ a {
   cursor: pointer;
   margin-right: 15px;
   margin-bottom: 15px;
+}
+.create-membership-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+}
+.cancel-btn {
+  border-style: none;
+  background: none;
+  cursor: pointer;
+}
+.new-membership-btns {
+  margin: 10px 10px;
+}
+input,
+textarea {
+  margin-top: 20px;
+  width: 400px;
 }
 
 footer {
