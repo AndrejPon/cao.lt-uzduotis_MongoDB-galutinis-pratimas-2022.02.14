@@ -28,7 +28,8 @@ a {
 }
 #new-membership-btn,
 #new-user-btn,
-.new-membership-btn {
+.new-membership-btn,
+.new-user-btn {
   background-color: blue;
   color: white;
   height: 30px;

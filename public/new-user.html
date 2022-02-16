@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New user form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">Memberships</a>
+        <a href="users.html">Users</a>
+    </header>
+    <section class="main-container">
+        <div class="upper-section">
+    <h1>Create User</h1>
+</div>
+    <div class="new-user-form">
+        <form  class="create-user-form" action="">
+            <div>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" placeholder="First Name">
+        </div><div>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" placeholder="Last Name">
+        </div>
+        <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Email Address">
+        </div>
+        <div>
+            <label for="change-membership">Change Membership</label>
+            <select id="change-membership" name="change-membership">
+                <option value="trial">Trial</option>
+                <option value="bronze">Bronze</option>
+                <option value="silver">Silver</option>
+                <option value="gold">Gold</option>
+                <option value="platinum">Platinum</option>
+              </select>
+        </div>
+
+        <div class="new-user-btns">
+            <button class="cancel-btn">Cancel</button>
+        <button class="new-user-btn">New User</button>
+    </div>
+        </form>
+        
+    </div>
+</section>
+
+
+    <footer>Copyright &copy;2021 Membership Manager</footer>
+    <script src="script.js"></script>
+</body>
+</html>
