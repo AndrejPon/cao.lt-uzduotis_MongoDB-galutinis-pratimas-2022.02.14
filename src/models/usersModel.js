@@ -18,7 +18,7 @@ async function getAllUsersFromDb() {
   }
 }
 
-async function getOrderedUsersFromDb(order) {
+async function getOrderedUsersFromDb() {
   try {
     await dbClient.connect();
     const dataFromDb = await dbClient

@@ -1,5 +1,6 @@
 const membershipsResults = document.getElementById('memberships-blocks-area');
 const usersResults = document.getElementById('users-blocks-area');
+const createForm = document.querySelector('.create-membership-form');
 const URL = 'http://localhost:3000';
 
 // const membershipTitleElement = document.querySelector('#membership-title');
@@ -40,6 +41,33 @@ fetch(`${URL}/memberships`)
       // membershipDescriptionElement.textContent = `${info.description}`;
     });
   });
+
+createForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const membName = createForm.querySelector("input[id='name']").value;
+  const membPrice = createForm.querySelector("input[id='price']").value;
+  const membDescr = createForm.querySelector(
+    "textarea[name='description']"
+  ).value;
+  const dataToSend = {
+    name: membName,
+    price: membPrice,
+    description: membDescr,
+  };
+
+  fetch(`${URL}/memberships`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataToSend),
+  })
+    .then((resp) => resp.text())
+    .then(() => alert('Membership created'))
+    .catch((err) => console.warn(err));
+});
+
 fetch(`${URL}/users`)
   .then((res) => res.json())
   .then((arrData) => {
